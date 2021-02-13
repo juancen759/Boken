@@ -1,0 +1,146 @@
+        $fuente1:'Montserrat',
+        sans-serif;
+        $color1:#312ac6;
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        
+        @import 'herencias';
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            @media(max-width: 375px) {
+                display: block;
+            }
+            //Contenedor Uno
+            .ContenedorUno {
+                position: relative;
+                width: 50%;
+                height: 100vh;
+                background-color: $color1;
+                opacity: 0.85;
+                background-image: url(img/fondo.png);
+                background-position: left center;
+                background-size: cover;
+                @media(max-width: 375px) {
+                    width: 100%;
+                    height: 50vh;
+                }
+                .logoTexto {
+                    width: 15vw;
+                    position: absolute;
+                    top: 5%;
+                    left: 10%;
+                    @media(max-width: 375px) {
+                        position: absolute;
+                        width: 35vw;
+                        top: 5%;
+                        left: 15%;
+                    }
+                }
+                .LogoImagen {
+                    position: absolute;
+                    width: 40%;
+                    height: 50vh;
+                    top: 25%;
+                    left: 33%;
+                    @media(max-width: 1024px) {
+                        left: 36%;
+                    }
+                    @media(max-width: 375px) {
+                        position: absolute;
+                        width: 35vw;
+                        height: 25vh;
+                        top: 30%;
+                        left: 35%;
+                    }
+                }
+            }
+            //Contenedor Dos
+            .ContenedorDos {
+                width: 50vw;
+                height: 100vh;
+                background-image: url(img/fondo.png);
+                background-position: bottom right;
+                background-size: 100;
+                background-color: $color1;
+                opacity: 0.85;
+                position: relative;
+                @media(max-width: 375px) {
+                    width: 100%;
+                    height: 50vh;
+                    background-position: bottom bottom;
+                }
+                .Info {
+                    position: absolute;
+                    top: 10%;
+                    left: 15%;
+                    width: 60%;
+                    height: 80%;
+                    padding-top: 18%;
+                    @media(max-width: 1024px) {
+                        padding-top: 40%;
+                        left: 15%;
+                    }
+                    @media(max-width: 375px) {
+                        width: 70%;
+                        height: 25vh;
+                        top: 0%;
+                        padding-top: 8%;
+                    }
+                    h2 {
+                        @include info;
+                        text-align: center;
+                        padding-bottom: 5%;
+                        font-size: 32px;
+                        @media(max-width: 375px) {
+                            font-size: 22px;
+                            padding-bottom: 2%;
+                        }
+                    }
+                    p {
+                        @include info;
+                        font-weight: 100;
+                        font-size: 12px;
+                        padding: 5%;
+                        opacity: 0.4;
+                        text-align: center;
+                        @media(max-width: 375px) {
+                            margin-top: 10%;
+                            padding: 0%;
+                            line-height: 15px;
+                        }
+                    }
+                }
+                .boton {
+                    @include BotonSumate;
+                    position: absolute;
+                    bottom: 20%;
+                    left: 32%;
+                    height: 7%;
+                    @media(max-width: 1024px) {
+                        bottom: 10%;
+                    }
+                    @media(max-width: 375px) {
+                        bottom: -55%;
+                        height: 20%;
+                    }
+                }
+                .redes-sociales {
+                    @include RedesSociales;
+                    display: flex;
+                    .face {
+                        @include IconoRedes;
+                    }
+                    .twiter {
+                        @include IconoRedes;
+                    }
+                    .insta {
+                        @include IconoRedes;
+                    }
+                }
+            }
+        }
